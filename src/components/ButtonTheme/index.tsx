@@ -11,13 +11,13 @@ const ButtonTheme = () => {
         onClick={() => toggleColorScheme()}
         sx={(theme) => ({
           backgroundColor:
-          theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
+            theme.colorScheme === "dark"
+              ? theme.colors.dark[6]
+              : theme.colors.gray[0],
           color:
-          theme.colorScheme === "dark"
-          ? theme.colors.yellow[4]
-          : theme.colors.blue[6],
+            theme.colorScheme === "dark"
+              ? theme.colors.yellow[4]
+              : theme.colors.blue[6],
         })}
       >
         {colorScheme === "dark" ? (
