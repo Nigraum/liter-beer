@@ -1,10 +1,11 @@
+import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import React from "react";
 
 function App() {
   return(
-    <div>
-      <h1>Teste</h1>
-    </div>
+    <h1>
+      test
+    </h1>
   );
 }; 
 
