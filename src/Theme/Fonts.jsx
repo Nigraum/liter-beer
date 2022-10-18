@@ -8,7 +8,7 @@ const Fonts = () => {
         font-style: normal;
         font-weight: 400;
         font-stretch: normal;
-        
+        src: url('./fonts/ArchitectsDaughter/ArchitectsDaughter-Regular.ttf');
       }
 
       @font-face {
@@ -17,7 +17,7 @@ const Fonts = () => {
         font-style: normal;
         font-weight: 400;
         font-stretch: normal;
-        
+        src: url('/fonts/Roboto/Roboto-Regular.ttf');
       }
     `}
   />
