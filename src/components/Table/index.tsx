@@ -3,13 +3,21 @@ import React, { useEffect, useMemo, useState } from "react";
 import { DataProps, TableProps } from "../../@types";
 import { IconDiscount } from "@tabler/icons";
 import RowsTable from "../RowsTable";
+import { useCalcPrice } from "../../hooks/useCalcPrice";
 
 interface LogicProps {
   data: DataProps[];
   setArrayTable: React.Dispatch<React.SetStateAction<DataProps[]>>;
-};
+}
 
-const Table = () => {
+const Table = ({ data, setArrayTable }: LogicProps) => {
+  const { calculedData, handleExcludeById } = useCalcPrice(data);
+
+  const handleDelete = (index: number) => {
+    const newArray = handleExcludeById(index, data);
+    setArrayTable(newArray);
+  };
+
   return (
     <TableMantine striped highlightOnHover style={{ maxWidth: "320px" }}>
       <thead
@@ -35,6 +43,14 @@ const Table = () => {
           color: "#352F29",
         }}
       >
+        {calculedData.map((item, index) => (
+          <RowsTable
+            tableData={item}
+            onDeleteRow={handleDelete}
+            key={`${item.name}${index}`}
+            index={index}
+          />
+        ))}
       </tbody>
     </TableMantine>
   );
