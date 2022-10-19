@@ -1,4 +1,17 @@
-import { Box, ColorScheme, ColorSchemeProvider, Container, MantineProvider, Paper, SegmentedControl, Text, TextInput, Title } from "@mantine/core";
+import { 
+  Box, 
+  Button, 
+  ColorScheme, 
+  ColorSchemeProvider, 
+  Container, 
+  Group, 
+  MantineProvider, 
+  Paper, 
+  SegmentedControl, 
+  Text, 
+  TextInput, 
+  Title 
+} from "@mantine/core";
 import { IconRegistered } from "@tabler/icons";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -141,6 +154,18 @@ function App() {
                   radius="md"
                   style={{ width: "100%" }}
                 />
+
+                <Group grow style={{ width: "100%" }}>
+                  <Button
+                    variant="filled"
+                    color="yellow"
+                    type="submit"
+                    radius="md"
+                    size="md"
+                  >
+                    Calcular
+                  </Button>
+                </Group>
             </Paper>
           </Container>
         </Box>
