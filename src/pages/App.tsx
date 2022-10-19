@@ -100,7 +100,20 @@ function App() {
                 />
               )}
 
-
+                <TextInput
+                  placeholder="Qual o valor?"
+                  label="Qual o valor?"
+                  defaultValue={0}
+                  withAsterisk
+                  {...register("price", {
+                    valueAsNumber: true,
+                    required: true,
+                    min: 1,
+                  })}
+                  step={0.01}
+                  radius="md"
+                  style={{ width: "100%" }}
+                />
             </Paper>
           </Container>
         </Box>
