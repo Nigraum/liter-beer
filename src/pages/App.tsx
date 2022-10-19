@@ -1,5 +1,7 @@
 import { Box, ColorScheme, ColorSchemeProvider, Container, MantineProvider, Paper, SegmentedControl, Text, TextInput, Title } from "@mantine/core";
+import { IconRegistered } from "@tabler/icons";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { DataProps } from "../@types";
 import { ButtonTheme } from "../components";
 
@@ -8,7 +10,11 @@ function App() {
   const [arrayTable, setArrayTable] = useState<DataProps[]>([]);
   const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
 
-
+  const { register, handleSubmit, reset } = useForm<DataProps>({
+    defaultValues: {
+      name: "",
+    }
+  })
 
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme((prev) => value || (prev === "dark" ? "light" : "dark"));
@@ -84,8 +90,17 @@ function App() {
                 <TextInput
                   placeholder="Quantas unidades do pack?"
                   label="Quantas unidades do pack?"
+                  defaultValue={0}
+                  {...register("amount", {
+                    valueAsNumber: true,
+                    min: 1,
+                  })}
+                  radius="md"
+                  style={ { width: "100%" } }
                 />
               )}
+
+
             </Paper>
           </Container>
         </Box>
