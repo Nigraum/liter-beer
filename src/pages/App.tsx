@@ -1,4 +1,4 @@
-import { Box, ColorScheme, ColorSchemeProvider, Container, MantineProvider, Paper, Text, TextInput, Title } from "@mantine/core";
+import { Box, ColorScheme, ColorSchemeProvider, Container, MantineProvider, Paper, SegmentedControl, Text, TextInput, Title } from "@mantine/core";
 import { useState } from "react";
 import { DataProps } from "../@types";
 import { ButtonTheme } from "../components";
@@ -60,11 +60,32 @@ function App() {
             >
               <TextInput
                 placeholder="Nome da cerveja"
-                label="Qual a cerveja"
+                label="Qual a cerveja?"
                 withAsterisk
                 radius="md"
                 style={{ width: "100%" }}
               />
+
+              <SegmentedControl
+                value={pack1}
+                onChange={setPack1}
+                data={[
+                  { label: "Unidade", value: "unit" },
+                  { label: "Pack", value: "pack" },
+                ]}
+                color="yellow"
+                radius={8}
+                transitionDuration={500}
+                transitionTimingFunction="linear"
+                style={{ border: "1px solid gray", width: "100%" }}
+              />
+
+              {pack1 === "pack" && (
+                <TextInput
+                  placeholder="Quantas unidades do pack?"
+                  label="Quantas unidades do pack?"
+                />
+              )}
             </Paper>
           </Container>
         </Box>
