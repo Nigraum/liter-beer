@@ -13,7 +13,7 @@ import {
   Title 
 } from "@mantine/core";
 import { IconRegistered } from "@tabler/icons";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { DataProps } from "../@types";
 import { ButtonTheme, Table } from "../components";
@@ -27,7 +27,15 @@ function App() {
     defaultValues: {
       name: "",
     }
-  })
+  });
+
+  const handleFormSubmit = useCallback(
+    (data: DataProps) => {
+      setArrayTable((prev) => [...prev, data]);
+      reset();
+    },
+    [reset]
+  );
 
   const resetResults = () => setArrayTable([]);
 
