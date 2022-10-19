@@ -86,6 +86,7 @@ function App() {
                 width: "320px",
                 gap: "10px",
               }}
+              onSubmit={handleSubmit(handleFormSubmit)}
             >
               <TextInput
                 placeholder="Nome da cerveja"
@@ -113,7 +114,6 @@ function App() {
                 <TextInput
                   placeholder="Quantas unidades do pack?"
                   label="Quantas unidades do pack?"
-                  defaultValue={0}
                   {...register("amount", {
                     valueAsNumber: true,
                     min: 1,
@@ -126,7 +126,6 @@ function App() {
                 <TextInput
                   placeholder="Qual o valor?"
                   label="Qual o valor?"
-                  defaultValue={0}
                   withAsterisk
                   {...register("price", {
                     valueAsNumber: true,
@@ -139,7 +138,6 @@ function App() {
                 />
 
                 <TextInput
-                  defaultValue={0}
                   placeholder="Mls"
                   label="Quantas Mls da unidade?"
                   withAsterisk
@@ -153,7 +151,6 @@ function App() {
                 />
 
                 <TextInput
-                  defaultValue={0}
                   placeholder="%"
                   label="Desconto?"
                   {...register("desc", {
