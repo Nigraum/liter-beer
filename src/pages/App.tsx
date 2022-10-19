@@ -165,6 +165,15 @@ function App() {
                   >
                     Calcular
                   </Button>
+                  <Button
+                    variant="outline"
+                    color="yellow"
+                    radius="md"
+                    onClick={() => reset()}
+                    size="md"
+                  >
+                    Apagar
+                  </Button>
                 </Group>
             </Paper>
           </Container>
