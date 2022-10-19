@@ -114,6 +114,24 @@ function App() {
                   radius="md"
                   style={{ width: "100%" }}
                 />
+
+                <TextInput
+                  defaultValue={0}
+                  placeholder="Mls"
+                  label="Quantas Mls da unidade?"
+                  withAsterisk
+                  {...register("mls", {
+                    valueAsNumber: true,
+                    required: true,
+                    min: 1,
+                  })}
+                  radius="md"
+                  style={{ width: "100%" }}
+                />
+
+                <TextInput
+                  defaultValue={0}
+                />
             </Paper>
           </Container>
         </Box>
