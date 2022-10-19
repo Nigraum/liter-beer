@@ -131,6 +131,15 @@ function App() {
 
                 <TextInput
                   defaultValue={0}
+                  placeholder="%"
+                  label="Desconto?"
+                  {...register("desc", {
+                    valueAsNumber: true,
+                    min: 0,
+                    max: 100,
+                  })}
+                  radius="md"
+                  style={{ width: "100%" }}
                 />
             </Paper>
           </Container>
