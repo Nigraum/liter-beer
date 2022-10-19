@@ -16,7 +16,7 @@ import { IconRegistered } from "@tabler/icons";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { DataProps } from "../@types";
-import { ButtonTheme } from "../components";
+import { ButtonTheme, Table } from "../components";
 
 function App() {
   const [pack1, setPack1] = useState<string>("unit");
@@ -188,6 +188,7 @@ function App() {
             >
               Resetar Resultados
             </Button>
+            <Table data={arrayTable} setArrayTable={setArrayTable} />
           </Container>
         </Box>
       </MantineProvider>
