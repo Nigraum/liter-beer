@@ -29,6 +29,8 @@ function App() {
     }
   })
 
+  const resetResults = () => setArrayTable([]);
+
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme((prev) => value || (prev === "dark" ? "light" : "dark"));
 
