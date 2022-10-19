@@ -176,6 +176,16 @@ function App() {
                   </Button>
                 </Group>
             </Paper>
+            <Button
+              my="20px"
+              variant="light"
+              color="yellow"
+              radius="md"
+              size="md"
+              onClick={resetResults}
+            >
+              Resetar Resultados
+            </Button>
           </Container>
         </Box>
       </MantineProvider>
